@@ -20,3 +20,4 @@ Skeleton of participants module
 - Oscar Marin Iglesias
 - Samuel Steven Ludeña Vela
 - Angela Maria Val Cadena
+- Juan Granda Molaguero
