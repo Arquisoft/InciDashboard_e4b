@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/gh/Arquisoft/participants0/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/participants0)
 
 
-# participants0
+# InciDashboard_e4b
 
 [![Join the chat at https://gitter.im/Arquisoft/participants0](https://badges.gitter.im/Arquisoft/participants0.svg)](https://gitter.im/Arquisoft/participants0?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -19,5 +19,5 @@ Skeleton of participants module
 - Alejandro Garcia Parrondo
 - Oscar Marin Iglesias
 - Samuel Steven Ludeña Vela
-- Angela Maria Val Cadena
+- Ángela Val Cadena
 - Juan Granda Molaguero
