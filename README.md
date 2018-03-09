@@ -14,3 +14,9 @@ Skeleton of participants module
 - Herminio García González (@herminiogg)
 - Jose Emilio Labra Gayo (@labra)
 
+# Modificadores
+
+- Alejandro Garcia Parrondo
+- Oscar Marin Iglesias
+- Samuel Steven Ludeña Vela
+- Angela Maria Val Cadena
