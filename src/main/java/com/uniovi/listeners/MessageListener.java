@@ -1,8 +1,6 @@
-package hello.listeners;
+package com.uniovi.listeners;
 
-import hello.MainController;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 
 import javax.annotation.ManagedBean;
@@ -10,6 +8,7 @@ import javax.annotation.ManagedBean;
 /**
  * Created by herminio on 28/12/16.
  */
+ 
 @ManagedBean
 public class MessageListener {
 

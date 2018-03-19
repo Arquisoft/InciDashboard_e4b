@@ -1,4 +1,4 @@
-package hello.listeners;
+package com.uniovi.listeners;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -17,6 +17,7 @@ import java.util.Map;
 /**
  * Created by herminio on 26/12/16.
  */
+ 
 @Configuration
 @EnableKafka
 public class KafkaListenerFactory {
