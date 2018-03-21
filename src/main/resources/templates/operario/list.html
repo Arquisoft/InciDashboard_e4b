@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head/>
+<body>
+
+	<div class="master">
+
+		<h2 th:text="${nombre}">Nombre de operario</h2>
+
+		<tr th:each="inci : ${incidencias}">
+    		<td th:text="${inci.incidenceName}"></td>
+    		<td th:text="${inci.description}"></td>
+ 	 	</tr>
+  
+		<div th:if="${inci.isEmpty()}">
+			<p style="text-align: center;">No hay incidencias</p>
+		</div>
+
+	</div>
+
+</body>
+</html>
+
