@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.uniovi.entities.extras.*;
+
 
 @Entity
 public class Incidencia {
@@ -19,31 +21,38 @@ public class Incidencia {
 	@GeneratedValue
 	private Long id;
 	
-	private String incidenceName;
-	private String description;
-	
-	private String location;
+	//Nombre de la incidencia
+	private String incidenceName;	
+	//Descripción de la incidencia
+	private String description;		
+	//Localizacion de la incidencia
+	private Location location;
+	//Etiquetas
 	@ElementCollection
 	private List<String> tags;
+	//Campos de la incidencia
 	@ElementCollection
 	private Map<String, String> fields;
 
-	
-	private String status;
+	//Estado de la incidencia (ABIERTA,	EN PROCESO,	CERRADA, ANULADA)
+	private Status status;
+	//Comentarios sobre la incidencia
 	private String comments;
+	//Fecha en la que expira la incidencia
 	private Date expirationDate;
 
+	//Operario al cual esta asignada la incidencia
 	@ManyToOne
 	@JoinColumn(name = "operario")
 	private Operario operario;
 	
 	public Incidencia() {}
 	
-	public Incidencia(String incidenceName, String descripcion, String localization, 
-			List<String> tags, HashMap<String, String> fields, String status, String comments, Date expirationDate) {
+	public Incidencia(String incidenceName, String descripcion, Location location, 
+				List<String> tags, HashMap<String, String> fields, Status status, String comments, Date expirationDate) {
 		this.incidenceName = incidenceName;
 		this.description = descripcion;
-		this.location = localization;
+		this.location = location;
 		this.tags = tags;
 		this.fields = fields;
 		this.status = status;
@@ -52,18 +61,18 @@ public class Incidencia {
 
 	}
 
-	public Incidencia(String incidenceName, String descripcion, String localization, List<String> tags) {
+	public Incidencia(String incidenceName, String descripcion, Location location, List<String> tags) {
 		this.incidenceName = incidenceName;
 		this.description = descripcion;
-		this.location = localization;
+		this.location = location;
 		this.tags = tags;
 
 	}
 	
-	public Incidencia(String incidenceName, String description, String localization) {
+	public Incidencia(String incidenceName, String description, Location location) {
 		this.incidenceName = incidenceName;
 		this.description = description;
-		this.location = localization;
+		this.location = location;
 	}
 
 	public Long getId() {
@@ -90,11 +99,11 @@ public class Incidencia {
 		this.description = description;
 	}
 
-	public String getLocation() {
+	public Location getLocation() {
 		return location;
 	}
 
-	public void setLocation(String location) {
+	public void setLocation(Location location) {
 		this.location = location;
 	}
 
@@ -114,11 +123,11 @@ public class Incidencia {
 		this.fields = fields;
 	}
 
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 

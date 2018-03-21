@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
+import com.uniovi.entities.extras.Location;
 
 /**
  * Servicio encargado de insertar unos datos iniciales en la base de datos.
@@ -36,7 +37,7 @@ public class IncludeDataService {
 		
 		List<Incidencia> incidencias = new ArrayList<Incidencia>();
 		for(int i=0;i<20;i++)
-			incidencias.add(new Incidencia("Incidencia " + i,"Incidencia de prueba " + i,"Incidencialandia " + i));
+			incidencias.add(new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i)));
 		
 		operarioService.addOperario(operario1);
 		operarioService.addOperario(operario2);
