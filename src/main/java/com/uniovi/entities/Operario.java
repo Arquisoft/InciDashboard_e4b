@@ -1,9 +1,7 @@
 package com.uniovi.entities;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -32,10 +30,6 @@ public class Operario {
 	private String password;
 	@Transient
 	private String passwordConfirm;
-
-	@OneToMany(mappedBy="operario", cascade = CascadeType.ALL)
-	private Set<Notificacion> notificaciones = new HashSet<>();
-	
 
 	public Operario() { }
 	
@@ -96,12 +90,5 @@ public class Operario {
 	public void setIncidencias(List<Incidencia> incidencias) {
 		this.incidencias = incidencias;
 	}
-
-	public Set<Notificacion> getNotificaciones() {
-		return notificaciones;
-	}
-
-	public void setNotificaciones(Set<Notificacion> notificaciones) {
-		this.notificaciones = notificaciones;
-	}
+	
 }
