@@ -1,6 +1,6 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2f5e9b234d9b4cbd8669629c299990ad)](https://www.codacy.com/app/jelabra/participants0?utm_source=github.com&utm_medium=referral&utm_content=Arquisoft/participants0&utm_campaign=badger)
-[![Build Status](https://travis-ci.org/Arquisoft/participants0.svg?branch=master)](https://travis-ci.org/Arquisoft/participants0)
-[![codecov](https://codecov.io/gh/Arquisoft/participants0/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/participants0)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e9d0acdac1f4427698134e010ffbd3fe)](https://www.codacy.com/app/AlexGPlay/InciDashboard_e4b?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/InciDashboard_e4b&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/Arquisoft/InciDashboard_e4b.svg?branch=master)](https://travis-ci.org/Arquisoft/InciDashboard_e4b)
+[![codecov](https://codecov.io/gh/Arquisoft/InciDashboard_e4b/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/InciDashboard_e4b)
 
 
 # InciDashboard_e4b
