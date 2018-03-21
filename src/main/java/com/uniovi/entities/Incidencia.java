@@ -9,6 +9,8 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -16,9 +18,6 @@ public class Incidencia {
 	@Id
 	@GeneratedValue
 	private Long id;
-
-	private String user;
-	private String password;
 	
 	private String incidenceName;
 	private String description;
@@ -34,23 +33,14 @@ public class Incidencia {
 	private String comments;
 	private Date expirationDate;
 
+	@ManyToOne
+	@JoinColumn(name = "operario")
+	private Operario operario;
 	
-	/**
-	 * Constructor vacio
-	 */
-	public Incidencia() {
-	}
+	public Incidencia() {}
 	
-	/**
-	 * Constructor con todos los parametros
-	 * 
-	 */
-	public Incidencia(Long id, String user, String password, String incidenceName, String descripcion, String localization,
-			 List<String> tags, HashMap<String, String> fields, String status, String comments, Date expirationDate) {
-		super();
-		this.id = id;
-		this.user = user;
-		this.password = password;
+	public Incidencia(String incidenceName, String descripcion, String localization, 
+			List<String> tags, HashMap<String, String> fields, String status, String comments, Date expirationDate) {
 		this.incidenceName = incidenceName;
 		this.description = descripcion;
 		this.location = localization;
@@ -62,49 +52,26 @@ public class Incidencia {
 
 	}
 
-	/**
-	 * Constructor base
-	 * 
-	 * @param id
-	 * @param user
-	 * @param password
-	 * @param incidenceName
-	 * @param description
-	 * @param localization
-	 * @param tags
-	 */
-
-	public Incidencia(Long id, String user, String password, String incidenceName, String descripcion,
-			String localization, List<String> tags) {
-		super();
-		this.id = id;
-		this.user = user;
-		this.password = password;
+	public Incidencia(String incidenceName, String descripcion, String localization, List<String> tags) {
 		this.incidenceName = incidenceName;
 		this.description = descripcion;
 		this.location = localization;
 		this.tags = tags;
 
 	}
+	
+	public Incidencia(String incidenceName, String description, String localization) {
+		this.incidenceName = incidenceName;
+		this.description = description;
+		this.location = localization;
+	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getIncidenceName() {
@@ -115,20 +82,20 @@ public class Incidencia {
 		this.incidenceName = incidenceName;
 	}
 
-	public String getDescripcion() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.description = descripcion;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getLocation() {
 		return location;
 	}
 
-	public void setLocalization(String localizacion) {
-		this.location = localizacion;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	public List<String> getTags() {
@@ -139,12 +106,12 @@ public class Incidencia {
 		this.tags = tags;
 	}
 
-	public Map<String, String> getCampos() {
+	public Map<String, String> getFields() {
 		return fields;
 	}
 
-	public void setCampos(HashMap<String, String> campos) {
-		this.fields = campos;
+	public void setFields(Map<String, String> fields) {
+		this.fields = fields;
 	}
 
 	public String getStatus() {
@@ -169,6 +136,14 @@ public class Incidencia {
 
 	public void setExpirationDate(Date expirationDate) {
 		this.expirationDate = expirationDate;
+	}
+
+	public Operario getOperario() {
+		return operario;
+	}
+
+	public void setOperario(Operario operario) {
+		this.operario = operario;
 	}
 
 	@Override
