@@ -1,5 +1,7 @@
 package com.uniovi.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,10 @@ public class OperarioService {
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	public List<Operario> findAll(){
+		return operarioRepository.findAll();
+	}
 	
 	public Operario findByDni(String dni) {
 		return operarioRepository.findByDni(dni);

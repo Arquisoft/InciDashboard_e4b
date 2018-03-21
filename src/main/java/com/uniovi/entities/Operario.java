@@ -1,9 +1,15 @@
 package com.uniovi.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -18,6 +24,9 @@ public class Operario {
 	@Column(unique=true)
 	private String dni;
 	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "operario", cascade = CascadeType.ALL)
+	private List<Incidencia> incidencias;
+	
 	private String password;
 	@Transient
 	private String passwordConfirm;
@@ -25,8 +34,13 @@ public class Operario {
 	public Operario() { }
 	
 	public Operario(String nombre, String dni) {
+		this(nombre, dni, new ArrayList<Incidencia>());
+	}
+	
+	public Operario(String nombre, String dni, List<Incidencia> incidencia) {
 		this.nombre = nombre;
 		this.dni = dni;
+		this.incidencias = incidencia;
 	}
 	
 	public long getId() {
@@ -68,6 +82,13 @@ public class Operario {
 	public void setPasswordConfirm(String passwordConfirm) {
 		this.passwordConfirm = passwordConfirm;
 	}
-	
+
+	public List<Incidencia> getIncidencias() {
+		return incidencias;
+	}
+
+	public void setIncidencias(List<Incidencia> incidencias) {
+		this.incidencias = incidencias;
+	}
 	
 }
