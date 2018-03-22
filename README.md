@@ -50,6 +50,11 @@ Para poder ejecutar la aplicación es necesario tener instalado Apache Maven, Ap
           mvn spring-boot:run
          ``` 
 
+5. Desde el navegador:
+        ``` 
+         http://localhost:8090
+        ```
+
 # Authors
 
 - Herminio García González (@herminiogg)
