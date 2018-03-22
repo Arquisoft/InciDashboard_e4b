@@ -14,6 +14,7 @@ public class IncidenceService {
 
 	@Autowired
 	private IncidenceRepository incidenceRepository;
+
 	
 	public List<Incidencia> findAll(){
 		return incidenceRepository.findAll();

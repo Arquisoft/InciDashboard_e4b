@@ -1,13 +1,11 @@
 package com.uniovi.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.uniovi.assignmentController.assigner.IncidenceAssignerImpl;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
 import com.uniovi.entities.extras.Location;
@@ -25,6 +23,9 @@ public class IncludeDataService {
 	@Autowired
 	private IncidenceService incidenceService;
 	
+	@Autowired
+	private IncidenceAssignerImpl asignadorIncidencias;
+	
 	@PostConstruct
 	public void init() {
 		Operario operario1 = new Operario("Jose","000000Z");
@@ -35,14 +36,16 @@ public class IncludeDataService {
 		operario2.setPassword("123456");
 		operario2.setPasswordConfirm("123456");
 		
-		List<Incidencia> incidencias = new ArrayList<Incidencia>();
-		for(int i=0;i<20;i++)
-			incidencias.add(new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i)));
-		
 		operarioService.addOperario(operario1);
 		operarioService.addOperario(operario2);
 		
-		incidencias.forEach(i -> incidenceService.saveIncidence(i));
+		for(int i=0;i<20;i++) {
+			Incidencia incidencia = new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i));
+			incidenceService.saveIncidence(incidencia);
+			asignadorIncidencias.assign(incidencia.getId());
+		}
+
+		
 	}
 	
 	

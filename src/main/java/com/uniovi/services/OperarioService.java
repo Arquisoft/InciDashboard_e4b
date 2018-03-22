@@ -40,8 +40,8 @@ public class OperarioService {
 		operarioRepository.delete(operario);
 	}
 	
-	public List<Incidencia> getIncidencesByAgent(Operario operario){
-		return operario.getIncidencias();
-	}
+//	public List<Incidencia> getIncidencesByAgent(Operario operario){
+//		return operario.getIncidencias();
+//	}
 	
 }

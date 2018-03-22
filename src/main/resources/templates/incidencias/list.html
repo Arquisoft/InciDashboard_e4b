@@ -12,23 +12,20 @@
 					<tr>
 						<th>Nombre</th>
 						<th>Descripcion</th>
-						<th>Localizacion</th>
 						<th>Fecha de expiracion</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="incidencia : ${listaIncidencias}">
+					<tr th:each="incidencia : ${incidencias}">
 
 						<td th:text="${incidencia.incidenceName}"></td>
 						<td th:text="${incidencia.description}"></td>
-						<td th:text="${incidencia.location.latitude} + , + ${incidencia.location.longitude}"></td>
 						<td th:text="${#dates.format(incidencia.expirationDate, 'dd-MM-yyyy')}"></td>
 						
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<footer th:replace="fragments/pagination" />
 	</div>
 	<footer class="footer" th:replace="fragments/footer :: footer" />
 </body>

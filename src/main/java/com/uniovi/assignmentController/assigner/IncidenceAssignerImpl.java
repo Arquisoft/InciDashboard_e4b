@@ -23,6 +23,7 @@ public class IncidenceAssignerImpl implements IncidenceAssigner{
 	public void assign(Long id) {
 		Operario toAssign = chooseOperario();
 		Incidencia incidencia = incidenceService.findById(id);
+		toAssign.getIncidencias().add(incidencia);
 		incidencia.setOperario(toAssign);
 		incidenceService.saveIncidence(incidencia);
 	}
