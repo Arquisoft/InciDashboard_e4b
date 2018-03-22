@@ -15,8 +15,8 @@ public class Location {
 
 	/**
 	 * Constructor que recibe la longitud y la altitud
-	 * @param latitude
-	 * @param longitude
+	 * @param latitud
+	 * @param longitud
 	 */
 	public Location(double latitud, double longitud) {
 		super();
@@ -34,7 +34,7 @@ public class Location {
 
 	/**
 	 * Asigna la latitud de la localizacion
-	 * @param latitude
+	 * @param latitud
 	 */
 	public void setLatitude(double latitud) {
 		this.latitude = latitud;

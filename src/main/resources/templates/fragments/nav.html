@@ -19,6 +19,18 @@
 						</li>
 					</ul>
 				</li>
+				<li id="notificaciones-menu" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+					<span>Notificaciones</span><span class="caret"></span>
+				</a>
+					<ul id="notificacionesDropdownMenuButton" class="dropdown-menu">
+						<li>
+							<a id="misNotificaciones" th:href="@{/notificaciones/list}"> 
+								<span>Mis notificaciones</span>
+							</a>
+						</li>
+					</ul>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li sec:authorize="!isAuthenticated()">

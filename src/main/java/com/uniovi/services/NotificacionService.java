@@ -3,6 +3,8 @@ package com.uniovi.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.uniovi.entities.Notificacion;
 import com.uniovi.repositories.NotificacionRepository;
@@ -20,8 +22,9 @@ public class NotificacionService {
 		return nr.findAll();
 	}
 	
-	public List<Notificacion> getNotificacionPorOperario(Long id){
-		return nr.findByOperario(id);
+	public Page<Notificacion> getNotificacionPorOperario(Pageable pageable, Long id){
+		Page<Notificacion> notificacion = nr.findByOperario(pageable,id);
+		return notificacion;
 	}
 
 }

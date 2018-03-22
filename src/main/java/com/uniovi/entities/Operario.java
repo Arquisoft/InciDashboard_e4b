@@ -25,7 +25,7 @@ public class Operario {
 	private String dni;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "operario", cascade = CascadeType.ALL)
-	private List<Incidencia> incidencias = new ArrayList<>();
+	private List<Incidencia> incidencias;
 	
 	private String password;
 	@Transient
