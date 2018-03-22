@@ -1,7 +1,5 @@
 package com.uniovi.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,11 +15,11 @@ public class IncidenciasController {
 	@Autowired
 	private IncidenceRepository incidenceRepository;
 
-	@RequestMapping("incidencias/location/{id}")
+	@RequestMapping("/incidencias/location/{id}")
 	public String getLocationInci(Model model, @PathVariable Long id) {
 		Incidencia incidencia = incidenceRepository.findById(id);
 		if (incidencia != null) {
-			model.addAttribute("incidencia", incidencia);
+			model.addAttribute("incid", incidencia);
 			return "incidencias/map";
 		}
 		return "redirect:/";

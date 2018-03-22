@@ -5,15 +5,16 @@
 	<nav th:replace="fragments/nav" />
 	<div class="container">
 		<h2>Incidencias:</h2>
-		
+
 		<div class="table-responsive">
-			<table class="table table-hover" th:fragment="incidenciasOperador" id="incidenciasOperador">
+			<table class="table table-hover" th:fragment="incidenciasOperador"
+				id="incidenciasOperador">
 				<thead>
 					<tr>
 						<th>Nombre</th>
 						<th>Descripcion</th>
-						<th>Localizacion</th>
 						<th>Fecha de expiracion</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -21,9 +22,10 @@
 
 						<td th:text="${incidencia.incidenceName}"></td>
 						<td th:text="${incidencia.description}"></td>
-						<td th:text="${incidencia.location.latitude + ',' + incidencia.location.longitude}"></td>
-						<td th:text="${#dates.format(incidencia.expirationDate, 'dd-MM-yyyy')}"></td>
-						
+						<td
+							th:text="${#dates.format(incidencia.expirationDate, 'dd-MM-yyyy')}"></td>
+						<td><a th:href="@{'http://localhost:8090/incidencias/location/'+${incidencia.id}}">Ver en mapa</a>
+						</td>
 					</tr>
 				</tbody>
 			</table>
