@@ -8,9 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.uniovi.Application;
@@ -34,18 +33,13 @@ public class NotificacionController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/notificaciones/list")
-	public String getInvitations(Model model, Pageable pageable) {
+	@RequestMapping(value = "/notificaciones/list/{id}")
+	public String getInvitations(Model model, Pageable pageable, @PathVariable Long id) {
 		Page<Notificacion> notificaciones = new PageImpl<Notificacion>(new LinkedList<Notificacion>());
 		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String dni = auth.getName();
-		Operario operario = os.findByDni(dni);
+		Operario operario = os.findById(id);
 
-		notificaciones = ns.getNotificacionPorOperario(pageable, operario.getId());
-		
-	
-	
+		notificaciones = ns.getNotificacionPorOperario(pageable, operario.getId());	
 		model.addAttribute("page", notificaciones);
 		model.addAttribute("notificacionList", notificaciones.getContent());
 
