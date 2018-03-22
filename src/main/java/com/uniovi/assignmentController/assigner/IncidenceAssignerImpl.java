@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.uniovi.dangerController.CheckDangerImpl;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
 import com.uniovi.services.IncidenceService;
@@ -19,12 +20,16 @@ public class IncidenceAssignerImpl implements IncidenceAssigner{
 	@Autowired
 	private IncidenceService incidenceService;
 	
+	@Autowired
+	private CheckDangerImpl dangerAssigner;
+	
 	@Override
 	public void assign(Long id) {
 		Operario toAssign = chooseOperario();
 		Incidencia incidencia = incidenceService.findById(id);
 		incidencia.setOperario(toAssign);
 		incidenceService.saveIncidence(incidencia);
+		dangerAssigner.checkDanger(incidencia, toAssign);
 	}
 	
 	private Operario chooseOperario() {

@@ -1,5 +1,7 @@
 package com.uniovi.services;
 
+import java.util.HashMap;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,15 +45,17 @@ public class IncludeDataService {
 		operarioService.addOperario(operario1);
 		operarioService.addOperario(operario2);
 		
-		
-		
 		for(int i=0;i<20;i++) {
 			Incidencia incidencia = new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i));
 			incidenceService.saveIncidence(incidencia);
 			asignadorIncidencias.assign(incidencia.getId());
 		}
 
-		
+		Incidencia incidencia = new Incidencia("Incidencia temperatura","Comprobamos si el filtro de temperatura funciona", new Location(50,50));
+		HashMap<String,String> campos = new HashMap<String,String>();
+		campos.put("Temperatura", "80");
+		incidencia.setFields(campos);
+		incidenceService.saveIncidence(incidencia);
 	}
 	
 	

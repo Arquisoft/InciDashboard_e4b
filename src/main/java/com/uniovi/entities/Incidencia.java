@@ -9,6 +9,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -33,10 +34,10 @@ public class Incidencia {
 	//Localizacion de la incidencia
 	private Location location;
 	//Etiquetas
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> tags;
 	//Campos de la incidencia
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	private Map<String, String> fields;
 
 	//Estado de la incidencia (ABIERTA,	EN PROCESO,	CERRADA, ANULADA)
