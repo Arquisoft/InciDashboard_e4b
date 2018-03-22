@@ -16,14 +16,12 @@ public class OperarioController {
 	@Autowired
 	OperarioService operarioService;
 	
-    @RequestMapping(value="operario/list")
-    public String getOperarioList(Model model) {
-    	UserDetails logged = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    	Operario operario = operarioService.findByDni(logged.getUsername());
-    	
-    	model.addAttribute("nombre", operario.getNombre());
-    	model.addAttribute("incidencias", operario.getIncidencias());
-    	
-		return "operario/list";
+    
+    @RequestMapping(value="incidencias/list")
+    public String getIncidencesList(Model model) {
+	    	UserDetails logged = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	    	Operario operario = operarioService.findByDni(logged.getUsername());    	
+	    	model.addAttribute("incidencias", operarioService.getIncidencesByAgent(operario));   	
+		return "incidencias/list";
     }
 }

@@ -4,11 +4,26 @@
 
 	<div class="container-fluid">
 		<div class="collapse navbar-collapse" id="myNavbar">
-			
+			<ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
+				<li class="dropdown">
+					<a id="btnIncidences" href="#" class="dropdown-toggle" data-toggle="dropdown" 
+						role="button" aria-haspopup="true" aria-expanded="false">
+						<span>Incidencias</span> 
+						<span class="caret"></span>
+					</a>
+					<ul id="incidencesDropdownMenuButton" class="dropdown-menu">
+						<li>
+							<a id="myIncidences" th:href="@{/operario/list}"> 
+								<span>Mis incidencias</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li sec:authorize="!isAuthenticated()">
-					<a th:href="@{/login}">Login<span
-						class="glyphicon glyphicon-log-in"></span>
+					<a th:href="@{/login}"><span
+						class="glyphicon glyphicon-log-in"></span>Login
 				</a></li>
 				<li sec:authorize="isAuthenticated()"><a href="/logout"><span
 						class="glyphicon glyphicon-log-out"></span> Desconectar

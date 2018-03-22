@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
 import com.uniovi.repositories.OperarioRepository;
 
@@ -37,6 +38,10 @@ public class OperarioService {
 	
 	public void removeOperario(Operario operario) {
 		operarioRepository.delete(operario);
+	}
+	
+	public List<Incidencia> getIncidencesByAgent(Operario operario){
+		return operario.getIncidencias();
 	}
 	
 }
