@@ -264,9 +264,7 @@ public class Incidencia {
 			return true;
 		if(status.equals(Status.EN_PROCESO) && "EN_PROCESO".equals(estado))
 			return true;
-		if(status.equals(Status.ANULADA) && "ANULADA".equals(estado))
-			return true;
-		else return false;
+		return status.equals(Status.ANULADA) && "ANULADA".equals(estado);
 	}
 
 	@Override
