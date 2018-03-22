@@ -27,7 +27,7 @@
 						<td>
 							<script type="text/javascript">
 								//<![CDATA[
-									$("statusOptions").on('change', function() {
+									$("select").on('change', function() {
 										var valor = $(this).attr('id');
 										$.get( "/incidence/update", 
 												{ 
@@ -47,7 +47,7 @@
 									})
 								//]]>
 							</script>
-							<select name="statusOptions" th:id="${incidencia.id}">
+							<select th:name="statusOptions" th:id="${incidencia.id}">
 								<option value="abierta">Abierta</option>
 								<option value="enProceso">En proceso</option>
 								<option value="cerrada">Cerrada</option>

@@ -39,7 +39,7 @@ public class Incidencia {
 
 	//Estado de la incidencia (ABIERTA,	EN PROCESO,	CERRADA, ANULADA)
 	@Enumerated(EnumType.STRING)
-	private Status status;
+	private Status status = Status.ABIERTA;
 	//Comentarios sobre la incidencia
 	private String comments;
 	//Fecha en la que expira la incidencia
