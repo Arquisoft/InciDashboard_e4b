@@ -7,7 +7,46 @@
 
 [![Join the chat at https://gitter.im/Arquisoft/participants0](https://badges.gitter.im/Arquisoft/participants0.svg)](https://gitter.im/Arquisoft/participants0?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Skeleton of participants module
+Módulo encargado de la gestión y análisis de las incidencias mostradas a los operarios en un cuadro de mandos.
+
+# Como ejecutar
+
+Para poder ejecutar la aplicación es necesario tener instalado Apache Maven, Apache Kafka y una base de datos local HSQLDB.
+
+1. Arrancar la base de datos. Situandose en la carpeta bin de la base de datos hay que ejcutar lo siguiente:
+* Para Windows:
+```
+runServer.bat
+```
+* Para MacOS/Linux:
+```
+sh runServer.sh
+```
+
+2. Arrancar servidor zookeeper. Situandose en la carpeta bin de Apache Kafka ejecutar lo siguiente:
+* Para Windows:
+```
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+```
+* Para MacOs/Linux:
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+3. Arrancar Apache Kafka. Situandose en la carpeta bin de Apache Kafka ejecutar lo siguiente:
+* Para Windows:
+```
+bin\windows\kafka-server-start.bat config\server.properties
+```
+* Para MacOs/Linux:
+```
+bin/kafka-server-start.sh config/server.properties
+``` 
+
+4. En la carpeta del proyecto ejecutar lo siguiente (independiente del SO):
+```
+mvn spring-boot:run
+``` 
 
 # Authors
 
