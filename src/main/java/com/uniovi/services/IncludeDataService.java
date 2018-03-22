@@ -39,6 +39,7 @@ public class IncludeDataService {
 		operarioService.addOperario(operario1);
 		operarioService.addOperario(operario2);
 		
+		
 		for(int i=0;i<20;i++) {
 			Incidencia incidencia = new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i));
 			incidenceService.saveIncidence(incidencia);

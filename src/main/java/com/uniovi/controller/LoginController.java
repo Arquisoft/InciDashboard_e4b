@@ -11,7 +11,7 @@ public class LoginController {
 	
     @RequestMapping("/login")
     public String viewLogin() {
-    	logger.info("Desplegando vista login");
+    		logger.info("Desplegando vista login");
 		return "login";
     }
 	

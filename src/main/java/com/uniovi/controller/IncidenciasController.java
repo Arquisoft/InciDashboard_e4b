@@ -37,4 +37,10 @@ public class IncidenciasController {
 		incidenceService.updateStatusIncidence(id, estado);
 		return "incidencias/list";
 	}
+	
+	@RequestMapping(value = "/incidencias/all", method=RequestMethod.GET)
+	public String getAll(Model model) {
+		model.addAttribute("incidencias", incidenceService.findAll());
+		return "incidencias/all";
+	}
 }
