@@ -9,6 +9,9 @@
 
 Módulo encargado de la gestión y análisis de las incidencias mostradas a los operarios en un cuadro de mandos.
 
+# Descripción
+Este módulo se encarga de recibir y gestionar las incidencias enviadas por el módulo InciManager a travéz de Apache Kafka. 
+
 # Como ejecutar
 
 Para poder ejecutar la aplicación es necesario tener instalado Apache Maven, Apache Kafka y una base de datos local HSQLDB.
