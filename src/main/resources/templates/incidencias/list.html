@@ -23,7 +23,6 @@
 						<td th:text="${incidencia.incidenceName}"></td>
 						<td th:text="${incidencia.description}"></td>
 						<td th:text="${#dates.format(incidencia.expirationDate, 'dd-MM-yyyy')}"></td>
-						
 						<td>
 							<script type="text/javascript">
 								//<![CDATA[
@@ -48,10 +47,10 @@
 								//]]>
 							</script>
 							<select th:name="statusOptions" th:id="${incidencia.id}">
-								<option value="abierta">Abierta</option>
-								<option value="enProceso">En proceso</option>
-								<option value="cerrada">Cerrada</option>
-								<option value="anulada">Anulada</option>
+								<option value="abierta" th:selected="${incidencia.statusIs('ABIERTA')}">Abierta</option>
+								<option value="enProceso" th:selected="${incidencia.statusIs('EN_PROCESO')}">En proceso</option>
+								<option value="cerrada" th:selected="${incidencia.statusIs('CERRADA')}">Cerrada</option>
+								<option value="anulada" th:selected="${incidencia.statusIs('ANULADA')}">Anulada</option>
 							</select>
 						</td>
 						<td><a th:href="@{'http://localhost:8090/incidencias/location/'+${incidencia.id}}">Ver en mapa</a>

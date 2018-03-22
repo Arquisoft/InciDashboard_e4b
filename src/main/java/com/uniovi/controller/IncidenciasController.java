@@ -35,7 +35,6 @@ public class IncidenciasController {
 	public String updateStatus(@RequestParam(defaultValue = "") Long id, 
 				@RequestParam(defaultValue = "") String estado) {
 		incidenceService.updateStatusIncidence(id, estado);
-		System.err.println(estado);
 		return "incidencias/list";
 	}
 }

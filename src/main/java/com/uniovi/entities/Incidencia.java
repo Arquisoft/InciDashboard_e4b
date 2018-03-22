@@ -256,6 +256,18 @@ public class Incidencia {
 	public void setOperario(Operario operario) {
 		this.operario = operario;
 	}
+	
+	public boolean statusIs(String estado) {
+		if(status.equals(Status.ABIERTA) && estado.equals("ABIERTA"))
+			return true;
+		if(status.equals(Status.CERRADA) && estado.equals("CERRADA"))
+			return true;
+		if(status.equals(Status.EN_PROCESO) && estado.equals("EN_PROCESO"))
+			return true;
+		if(status.equals(Status.ANULADA) && estado.equals("ANULADA"))
+			return true;
+		else return false;
+	}
 
 	@Override
 	public int hashCode() {
@@ -264,6 +276,7 @@ public class Incidencia {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
