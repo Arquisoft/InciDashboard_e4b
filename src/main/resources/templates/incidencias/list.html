@@ -27,14 +27,13 @@
 						<td>
 							<script type="text/javascript">
 								//<![CDATA[
-									$('select').on('change', function() {
+									$("statusOptions").on('change', function() {
 										var valor = $(this).attr('id');
 										$.get( "/incidence/update", 
 												{ 
 													id: valor,
 												  	estado: document.getElementById(valor).value,
 												 } , function( data ) {
-											alert( this.value );
 											var sel = document.getElementById(valor);
 											for(var i = 0; i < sel.options.length; i++){
 												if(sel.options[i].value == valor ){
@@ -42,6 +41,8 @@
 												}
 											}
 											sel.options[pos].selected = true;
+											var urlUpdate = '/incidencias/list';
+											$("#incidenciasOperador").load(urlUpdate);
 										})
 									})
 								//]]>

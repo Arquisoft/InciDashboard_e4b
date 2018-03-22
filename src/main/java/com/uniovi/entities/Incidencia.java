@@ -7,6 +7,8 @@ import java.util.Map;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -36,6 +38,7 @@ public class Incidencia {
 	private Map<String, String> fields;
 
 	//Estado de la incidencia (ABIERTA,	EN PROCESO,	CERRADA, ANULADA)
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	//Comentarios sobre la incidencia
 	private String comments;
