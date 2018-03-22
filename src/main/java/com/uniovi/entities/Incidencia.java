@@ -39,7 +39,7 @@ public class Incidencia {
 	//Comentarios sobre la incidencia
 	private String comments;
 	//Fecha en la que expira la incidencia
-	private Date expirationDate = new Date();
+	private Date expirationDate;
 
 	//Operario al cual esta asignada la incidencia
 	@ManyToOne
@@ -66,13 +66,14 @@ public class Incidencia {
 		this.description = descripcion;
 		this.location = location;
 		this.tags = tags;
-
+		this.expirationDate = new Date();
 	}
 	
 	public Incidencia(String incidenceName, String description, Location location) {
 		this.incidenceName = incidenceName;
 		this.description = description;
 		this.location = location;
+		this.expirationDate = new Date();
 	}
 
 

@@ -12,6 +12,7 @@
 					<tr>
 						<th>Nombre</th>
 						<th>Descripcion</th>
+						<th>Localizacion</th>
 						<th>Fecha de expiracion</th>
 					</tr>
 				</thead>
@@ -20,6 +21,7 @@
 
 						<td th:text="${incidencia.incidenceName}"></td>
 						<td th:text="${incidencia.description}"></td>
+						<td th:text="${incidencia.location.latitude + ',' + incidencia.location.longitude}"></td>
 						<td th:text="${#dates.format(incidencia.expirationDate, 'dd-MM-yyyy')}"></td>
 						
 					</tr>
