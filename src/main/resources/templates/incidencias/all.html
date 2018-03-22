@@ -4,7 +4,7 @@
 <body>
 	<nav th:replace="fragments/nav" />
 	<div class="container">
-		<h2>Incidencias:</h2>
+		<h2>DashBoard:</h2>
 
 		<div class="table-responsive">
 			<table class="table table-hover" th:fragment="incidenciasOperador"
@@ -26,7 +26,7 @@
 						<td th:text="${incidencia.description}"></td>
 						<td>
 							<ul th:each="tag : ${incidencia.tags}">
-								<li th:text="tag"></li>
+								<li th:text="${tag}"></li>
 							</ul>
 						</td>
 						<td th:text="${#dates.format(incidencia.expirationDate, 'dd-MM-yyyy')}"></td>

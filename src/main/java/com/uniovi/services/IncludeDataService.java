@@ -1,6 +1,8 @@
 package com.uniovi.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -9,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import com.uniovi.assignmentController.assigner.IncidenceAssignerImpl;
 import com.uniovi.entities.Incidencia;
-import com.uniovi.entities.Notificacion;
 import com.uniovi.entities.Operario;
 import com.uniovi.entities.extras.Location;
 
@@ -47,7 +48,25 @@ public class IncludeDataService {
 		
 		
 		for(int i=0;i<20;i++) {
-			Incidencia incidencia = new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i));
+			Incidencia incidencia = new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i));	
+			if(i%2==0) {
+				HashMap<String,String> campos = new HashMap<String,String>();
+				campos.put("Temperatura", "100");
+				campos.put("Humo", "50");
+				incidencia.setFields(campos);
+				List<String> etiquetas = new ArrayList<>();
+				etiquetas.add("Incendio");
+				incidencia.setTags(etiquetas);
+				
+			}
+			if(i%2==1) {
+				HashMap<String,String> campos = new HashMap<String,String>();
+				campos.put("Humedad", "20");
+				incidencia.setFields(campos);
+				List<String> etiquetas = new ArrayList<>();
+				etiquetas.add("Lluvias");
+				incidencia.setTags(etiquetas);
+			}
 			incidenceService.saveIncidence(incidencia);
 			asignadorIncidencias.assign(incidencia.getId());
 		}
