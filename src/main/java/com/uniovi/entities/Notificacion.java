@@ -17,13 +17,12 @@ public class Notificacion {
 	private Operario operario;
 
 	private String comentario;
+	
 
 	public Notificacion() {
 	}
 
-	public Notificacion(long id, Operario operario, String comentario) {
-		super();
-		this.id = id;
+	public Notificacion(Operario operario, String comentario) {
 		this.operario = operario;
 		this.comentario = comentario;
 	}

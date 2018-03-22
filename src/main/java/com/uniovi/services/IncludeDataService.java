@@ -1,5 +1,7 @@
 package com.uniovi.services;
 
+import java.util.HashMap;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.uniovi.assignmentController.assigner.IncidenceAssignerImpl;
 import com.uniovi.entities.Incidencia;
+import com.uniovi.entities.Notificacion;
 import com.uniovi.entities.Operario;
 import com.uniovi.entities.extras.Location;
 
@@ -25,6 +28,9 @@ public class IncludeDataService {
 	
 	@Autowired
 	private IncidenceAssignerImpl asignadorIncidencias;
+	
+	@Autowired 
+	private NotificacionService notificacionService;
 	
 	@PostConstruct
 	public void init() {
@@ -46,7 +52,11 @@ public class IncludeDataService {
 			asignadorIncidencias.assign(incidencia.getId());
 		}
 
-		
+		Incidencia incidencia = new Incidencia("Incidencia temperatura","Comprobamos si el filtro de temperatura funciona", new Location(50,50));
+		HashMap<String,String> campos = new HashMap<String,String>();
+		campos.put("Temperatura", "80");
+		incidencia.setFields(campos);
+		incidenceService.saveIncidence(incidencia);
 	}
 	
 	

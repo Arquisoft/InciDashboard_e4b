@@ -3,16 +3,14 @@ package com.uniovi.assignmentController.assigner;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import com.uniovi.dangerController.CheckDangerImpl;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
 import com.uniovi.services.IncidenceService;
+import com.uniovi.services.NotificacionService;
 import com.uniovi.services.OperarioService;
 
-@Service
-public class IncidenceAssignerImpl implements IncidenceAssigner{
+public class NotificationAssignerImpl implements NotificationAssigner{
 
 	@Autowired
 	private OperarioService operarioService;
@@ -21,7 +19,7 @@ public class IncidenceAssignerImpl implements IncidenceAssigner{
 	private IncidenceService incidenceService;
 	
 	@Autowired
-	private CheckDangerImpl dangerAssigner;
+	private NotificacionService notificacionService;
 	
 	@Override
 	public void assign(Long id) {
@@ -29,7 +27,6 @@ public class IncidenceAssignerImpl implements IncidenceAssigner{
 		Incidencia incidencia = incidenceService.findById(id);
 		incidencia.setOperario(toAssign);
 		incidenceService.saveIncidence(incidencia);
-		dangerAssigner.checkDanger(incidencia, toAssign);
 	}
 	
 	private Operario chooseOperario() {
@@ -41,5 +38,4 @@ public class IncidenceAssignerImpl implements IncidenceAssigner{
 		
 		return null;
 	}
-
 }

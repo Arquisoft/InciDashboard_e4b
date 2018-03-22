@@ -30,6 +30,9 @@ public class Operario {
 	private String password;
 	@Transient
 	private String passwordConfirm;
+	
+	@OneToMany
+	private List<Notificacion> notificaciones;
 
 	public Operario() { }
 	
@@ -90,5 +93,15 @@ public class Operario {
 	public void setIncidencias(List<Incidencia> incidencias) {
 		this.incidencias = incidencias;
 	}
+
+	public List<Notificacion> getNotificaciones() {
+		return notificaciones;
+	}
+
+	public void setNotificaciones(List<Notificacion> notificaciones) {
+		this.notificaciones = notificaciones;
+	}
+	
+	
 	
 }
