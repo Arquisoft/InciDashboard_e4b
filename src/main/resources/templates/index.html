@@ -1,12 +1,13 @@
-<html>
-<head>
-<title>Hola</title>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head"/>
 <body>
-	<span sec:authentication="principal.username" th:inline="text"></span>
-	<a href="/logout">Cerrar sesión</a>
-	<h1>Dashboard0 skeleton</h1>
-	<h2>Receiving messages for you:</h2>
-	<div id="messages"></div>
+	<nav th:replace="fragments/nav"/>
+	
+	<div class="container" style="text-align: center">
+		<h1>Dashboard</h1>
+		<h2>Receiving messages for you:</h2>
+	</div>
+	<footer th:replace="fragments/footer"/>
 </body>
 </html>
