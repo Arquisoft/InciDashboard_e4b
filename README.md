@@ -24,29 +24,29 @@ sh runServer.sh
 ```
 
 2. Arrancar servidor zookeeper. Situandose en la carpeta bin de Apache Kafka ejecutar lo siguiente:
-* Para Windows:
-```
-bin\windows\zookeeper-server-start.bat config\zookeeper.properties
-```
-* Para MacOs/Linux:
-```
-bin/zookeeper-server-start.sh config/zookeeper.properties
-```
+  * Para Windows:
+    ```
+    bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+    ```
+  * Para MacOs/Linux:
+    ```
+    bin/zookeeper-server-start.sh config/zookeeper.properties
+    ```
 
 3. Arrancar Apache Kafka. Situandose en la carpeta bin de Apache Kafka ejecutar lo siguiente:
-* Para Windows:
-```
-bin\windows\kafka-server-start.bat config\server.properties
-```
-* Para MacOs/Linux:
-```
-bin/kafka-server-start.sh config/server.properties
-``` 
+  * Para Windows:
+    ```
+    bin\windows\kafka-server-start.bat config\server.properties
+    ```
+  * Para MacOs/Linux:
+    ```
+    bin/kafka-server-start.sh config/server.properties
+    ``` 
 
 4. En la carpeta del proyecto ejecutar lo siguiente (independiente del SO):
-```
-mvn spring-boot:run
-``` 
+    ```
+    mvn spring-boot:run
+    ``` 
 
 # Authors
 
