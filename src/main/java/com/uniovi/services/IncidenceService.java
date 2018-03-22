@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
+import com.uniovi.entities.extras.Status;
 import com.uniovi.repositories.IncidenceRepository;
 
 @Service
@@ -33,6 +34,17 @@ public class IncidenceService {
 	
 	public void removeIncidence(Incidencia incidencia) {
 		incidenceRepository.delete(incidencia);
+	}
+	
+	public void updateStatusIncidence(Long id, String estado) {
+		if(estado.equals("abierta"))
+			incidenceRepository.updateIncidenciaStatus(Status.ABIERTA, id);
+		else if(estado.equals("enProceso"))
+			incidenceRepository.updateIncidenciaStatus(Status.EN_PROCESO, id);
+		else if(estado.equals("cerrada"))
+			incidenceRepository.updateIncidenciaStatus(Status.CERRADA, id);
+		else if(estado.equals("anulada"))
+			incidenceRepository.updateIncidenciaStatus(Status.ANULADA, id);
 	}
 	
 }

@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.uniovi.entities.Incidencia;
 import com.uniovi.repositories.IncidenceRepository;
+import com.uniovi.services.IncidenceService;
 
 @Controller
 public class IncidenciasController {
 
 	@Autowired
 	private IncidenceRepository incidenceRepository;
+	
+	@Autowired
+	private IncidenceService incidenceService;
 
 	@RequestMapping("/incidencias/location/{id}")
 	public String getLocationInci(Model model, @PathVariable Long id) {
@@ -30,19 +34,8 @@ public class IncidenciasController {
 	@RequestMapping(value = "/incidence/update", method=RequestMethod.GET)
 	public String updateStatus(@RequestParam(defaultValue = "") Long id, 
 				@RequestParam(defaultValue = "") String estado) {
-//		Incidencia incidencia = 
-//		Usuario usuario = usersService.getUserById(id);
-//		List<Publicacion> publicaciones = postService.getPostFriends(usuario);
-//		if(publicaciones == null)
-//			model.addAttribute("noAmigo", true);
-//		else {
-//			model.addAttribute("noAmigo", false);
-//		}
-//		model.addAttribute("postsList", publicaciones);
-//		model.addAttribute("activeUserPublication", false);
-//		model.addAttribute("nombreUsuario", usuario.getName());
-//		return "publications/list";
+		incidenceService.updateStatusIncidence(id, estado);
 		System.err.println(estado);
-		return null;
+		return "incidence/list";
 	}
 }
