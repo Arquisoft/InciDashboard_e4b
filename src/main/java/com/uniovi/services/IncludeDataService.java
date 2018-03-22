@@ -2,6 +2,7 @@ package com.uniovi.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
@@ -39,6 +40,14 @@ public class IncludeDataService {
 		for(int i=0;i<20;i++)
 			incidencias.add(new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i)));
 		
+		Incidencia in = new Incidencia("Incidencia 21", "Examen de ASW", new Location(43.3617335,-5.8464228));
+		
+		List incds = new ArrayList<Incidencia>() {
+			{
+				add(in);
+			}
+		};
+		incidenceService.saveIncidence(in);
 		operarioService.addOperario(operario1);
 		operarioService.addOperario(operario2);
 		
