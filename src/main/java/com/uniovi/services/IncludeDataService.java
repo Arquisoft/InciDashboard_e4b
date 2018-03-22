@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.uniovi.assignmentController.assigner.IncidenceAssignerImpl;
 import com.uniovi.entities.Incidencia;
+import com.uniovi.entities.Notificacion;
 import com.uniovi.entities.Operario;
 import com.uniovi.entities.extras.Location;
 
@@ -26,6 +27,9 @@ public class IncludeDataService {
 	@Autowired
 	private IncidenceAssignerImpl asignadorIncidencias;
 	
+	@Autowired 
+	private NotificacionService notificacionService;
+	
 	@PostConstruct
 	public void init() {
 		Operario operario1 = new Operario("Jose","000000Z");
@@ -38,6 +42,8 @@ public class IncludeDataService {
 		
 		operarioService.addOperario(operario1);
 		operarioService.addOperario(operario2);
+		
+		
 		
 		for(int i=0;i<20;i++) {
 			Incidencia incidencia = new Incidencia("Incidencia " + i,"Incidencia de prueba " + i, new Location(i,i));

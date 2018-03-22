@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import com.uniovi.entities.Operario;
 import com.uniovi.services.NotificacionService;
 import com.uniovi.services.OperarioService;
 
+@Controller
 public class NotificacionController {
 	
 	private static Logger log = LoggerFactory.getLogger(Application.class);
@@ -41,9 +43,9 @@ public class NotificacionController {
 
 		notificaciones = ns.getNotificacionPorOperario(pageable, operario.getId());	
 		model.addAttribute("page", notificaciones);
-		model.addAttribute("notificacionList", notificaciones.getContent());
+		model.addAttribute("notificaciones", notificaciones.getContent());
 
 		log.info("Listando notificaciones de:"+ operario.getNombre());
-		return "/notificaciones/list";
+		return "redirect:/";
 	}
 }

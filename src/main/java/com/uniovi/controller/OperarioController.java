@@ -23,4 +23,14 @@ public class OperarioController {
 	    	model.addAttribute("incidencias", operario.getIncidencias());   	
 		return "incidencias/list";
     }
+    
+    
+    @RequestMapping(value="notificaciones/list")
+    public String getNotificacionesList(Model model) {
+	    	UserDetails logged = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	    	Operario operario = operarioService.findByDni(logged.getUsername());    	
+	    	model.addAttribute("notificaciones", operario.getNotificaciones());   	
+		return "notificaciones/list";
+    }
+    
 }

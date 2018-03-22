@@ -13,8 +13,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
-import com.uniovi.entities.extras.*;
+import com.uniovi.entities.extras.Location;
+import com.uniovi.entities.extras.Status;
 
 
 @Entity
@@ -49,6 +51,7 @@ public class Incidencia {
 	@ManyToOne
 	@JoinColumn(name = "operario")
 	private Operario operario;
+	
 	
 	/**
 	 * Constructor vacio
@@ -300,4 +303,5 @@ public class Incidencia {
 					", comments= " + comments  + ", status= " + status + 
 						", expirationDate= " + expirationDate + "]";
 	}
+	
 }
