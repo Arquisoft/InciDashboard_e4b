@@ -19,8 +19,8 @@ import com.uniovi.services.NotificacionService;
 import com.uniovi.services.OperarioService;
 
 public class NotificacionController {
-	static Logger log = LoggerFactory.getLogger(Application.class);
 	
+	private static Logger log = LoggerFactory.getLogger(Application.class);
 	
 	@Autowired
 	private NotificacionService ns;

@@ -37,13 +37,13 @@ public class IncidenceService {
 	}
 	
 	public void updateStatusIncidence(Long id, String estado) {
-		if(estado.equals("abierta"))
+		if("abierta".equals(estado))
 			incidenceRepository.updateIncidenciaStatus(Status.ABIERTA, id);
-		else if(estado.equals("enProceso"))
+		else if("enProceso".equals(estado))
 			incidenceRepository.updateIncidenciaStatus(Status.EN_PROCESO, id);
-		else if(estado.equals("cerrada"))
+		else if("cerrada".equals(estado))
 			incidenceRepository.updateIncidenciaStatus(Status.CERRADA, id);
-		else if(estado.equals("anulada"))
+		else if("anulada".equals(estado))
 			incidenceRepository.updateIncidenciaStatus(Status.ANULADA, id);
 	}
 	

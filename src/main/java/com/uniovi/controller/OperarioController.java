@@ -14,7 +14,7 @@ import com.uniovi.services.OperarioService;
 public class OperarioController {
 	
 	@Autowired
-	OperarioService operarioService;
+	private OperarioService operarioService;
     
     @RequestMapping(value="incidencias/list")
     public String getIncidencesList(Model model) {

@@ -258,13 +258,13 @@ public class Incidencia {
 	}
 	
 	public boolean statusIs(String estado) {
-		if(status.equals(Status.ABIERTA) && estado.equals("ABIERTA"))
+		if(status.equals(Status.ABIERTA) && "ABIERTA".equals(estado))
 			return true;
-		if(status.equals(Status.CERRADA) && estado.equals("CERRADA"))
+		if(status.equals(Status.CERRADA) && "CERRADA".equals(estado))
 			return true;
-		if(status.equals(Status.EN_PROCESO) && estado.equals("EN_PROCESO"))
+		if(status.equals(Status.EN_PROCESO) && "EN_PROCESO".equals(estado))
 			return true;
-		if(status.equals(Status.ANULADA) && estado.equals("ANULADA"))
+		if(status.equals(Status.ANULADA) && "ANULADA".equals(estado))
 			return true;
 		else return false;
 	}
