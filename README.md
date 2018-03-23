@@ -56,7 +56,10 @@ Para poder ejecutar la aplicación es necesario tener instalado Apache Maven, Ap
         ```
 # Usuarios de prueba
 DNI: 111111Z
-Contraseña: 123456
+<br>Contraseña: 123456
+
+DNI: 000000Z
+<br>Contraseña: 123456
 
 # Authors
 
