@@ -54,6 +54,9 @@ Para poder ejecutar la aplicación es necesario tener instalado Apache Maven, Ap
         ``` 
          http://localhost:8090
         ```
+# Usuarios de prueba
+DNI: 111111Z
+Contraseña: 123456
 
 # Authors
 
