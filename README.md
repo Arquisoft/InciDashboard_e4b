@@ -11,7 +11,7 @@
 # Descripción
 Este módulo se encarga de recibir y gestionar las incidencias enviadas por el módulo InciManager a través de Apache Kafka.
 
-# Como ejecutar
+# Cómo ejecutar
 
 Para poder ejecutar la aplicación es necesario tener instalado Apache Maven, Apache Kafka y una base de datos local HSQLDB.
 
@@ -68,8 +68,8 @@ DNI: 000000Z
 
 # Modificadores
 
-- Alejandro Garcia Parrondo
-- Oscar Marin Iglesias
+- Alejandro García Parrondo
+- Óscar Marín Iglesias
 - Samuel Steven Ludeña Vela
 - Ángela Val Cadena
 - Juan Granda Molaguero
