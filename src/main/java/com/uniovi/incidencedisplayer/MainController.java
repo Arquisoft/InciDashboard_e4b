@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.uniovi.incidencecontroller.services.IncidenceService;
 
+/**
+ * Controlador encargado de redirigir al usuario al login o al listado de incidencias.
+ */
 @Controller
 public class MainController {
 
@@ -26,7 +29,7 @@ public class MainController {
 		}
 		model.addAttribute("incidencias", incidenceService.findAll());
 		logger.info("El usuario ha sido reenviado a la vista de incidencias");
-		return "/incidencias/all"; //Cambiar por el método del controlador encargado de generar la vista de las incidencias
+		return "redirect:/incidencias/all";
     }
 
 

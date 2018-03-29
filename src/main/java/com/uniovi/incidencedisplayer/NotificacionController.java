@@ -19,6 +19,9 @@ import com.uniovi.entities.Operario;
 import com.uniovi.incidencecontroller.services.NotificacionService;
 import com.uniovi.incidencecontroller.services.OperarioService;
 
+/**
+ * Controlador encargado de gestionar las urls de las notificaciones.
+ */
 @Controller
 public class NotificacionController {
 	

@@ -11,9 +11,17 @@ import com.uniovi.entities.FiltroPropiedades;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.incidencecontroller.services.FilterService;
 
+/**
+ * Controlador encargado de gestionar las direcciones relaciones con los filtros
+ * de operarios.
+ */
 @Controller
 public class FilterController {
 
+	/**
+	 * Servicio de filtros, se usará para gestionar listas de filtros y añadir filtros
+	 * nuevos a la base de datos.
+	 */
 	@Autowired
 	private FilterService filterService;
 	

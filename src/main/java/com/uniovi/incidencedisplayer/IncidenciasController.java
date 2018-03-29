@@ -12,6 +12,9 @@ import com.uniovi.entities.Incidencia;
 import com.uniovi.incidencecontroller.repositories.IncidenceRepository;
 import com.uniovi.incidencecontroller.services.IncidenceService;
 
+/**
+ * Controlador encargado de gestionar las direcciones relacionadas con las incidencias.
+ */
 @Controller
 public class IncidenciasController {
 

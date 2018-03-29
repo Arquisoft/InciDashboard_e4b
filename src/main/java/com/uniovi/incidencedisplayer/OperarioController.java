@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.uniovi.entities.Operario;
 import com.uniovi.incidencecontroller.services.OperarioService;
 
+/**
+ * Controlador encargado de gestionar las urls relacionadas con operarios.
+ */
 @Controller
 public class OperarioController {
 	

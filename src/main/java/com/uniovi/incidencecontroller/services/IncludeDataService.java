@@ -16,7 +16,6 @@ import com.uniovi.entities.extras.Location;
 
 /**
  * Servicio encargado de insertar unos datos iniciales en la base de datos.
- * @author Alejandro García Parrondo
  */
 @Service
 public class IncludeDataService {
