@@ -1,4 +1,4 @@
-package com.uniovi.dangerController;
+package com.uniovi.dangercontroller;
 
 import java.util.List;
 

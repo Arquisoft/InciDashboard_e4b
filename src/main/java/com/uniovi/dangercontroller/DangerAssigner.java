@@ -1,4 +1,4 @@
-package com.uniovi.dangerController;
+package com.uniovi.dangercontroller;
 
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;

@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.uniovi.assignmentController.assigner.IncidenceAssignerImpl;
+import com.uniovi.assignmentcontroller.assigner.IncidenceAssignerImpl;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
 import com.uniovi.entities.extras.Location;

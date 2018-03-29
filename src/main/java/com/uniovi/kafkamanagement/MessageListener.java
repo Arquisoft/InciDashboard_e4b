@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import com.uniovi.assignmentController.queue.IncidenceQueueImpl;
+import com.uniovi.assignmentcontroller.queue.IncidenceQueueImpl;
 
 import javax.annotation.ManagedBean;
 

@@ -1,9 +1,9 @@
-package com.uniovi.assignmentController.queue;
+package com.uniovi.assignmentcontroller.queue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.uniovi.assignmentController.assigner.IncidenceAssigner;
+import com.uniovi.assignmentcontroller.assigner.IncidenceAssigner;
 
 /**
  * Implementación de la interfaz IncidenceQueue, por lo tanto esta clase es la encargada
