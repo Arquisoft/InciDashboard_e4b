@@ -1,4 +1,4 @@
-package com.uniovi.controller;
+package com.uniovi.incidencedisplayer;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;

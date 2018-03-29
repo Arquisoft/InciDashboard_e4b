@@ -1,4 +1,4 @@
-package com.uniovi.controller;
+package com.uniovi.incidencedisplayer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.uniovi.entities.Incidencia;
-import com.uniovi.repositories.IncidenceRepository;
-import com.uniovi.services.IncidenceService;
+import com.uniovi.incidencecontroller.repositories.IncidenceRepository;
+import com.uniovi.incidencecontroller.services.IncidenceService;
 
 @Controller
 public class IncidenciasController {

@@ -1,4 +1,4 @@
-package com.uniovi.services;
+package com.uniovi.incidencecontroller.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,9 +29,6 @@ public class IncludeDataService {
 	
 	@Autowired
 	private IncidenceAssignerImpl asignadorIncidencias;
-	
-	@Autowired 
-	private NotificacionService notificacionService;
 	
 	@PostConstruct
 	public void init() {

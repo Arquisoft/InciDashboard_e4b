@@ -1,4 +1,4 @@
-package com.uniovi.services;
+package com.uniovi.incidencecontroller.services;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Operario;
-import com.uniovi.repositories.OperarioRepository;
+import com.uniovi.incidencecontroller.repositories.OperarioRepository;
 
 @Service("userDetailsService")
 public class UserDetailServiceImpl implements UserDetailsService{

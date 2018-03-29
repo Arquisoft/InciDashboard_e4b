@@ -1,4 +1,4 @@
-package com.uniovi.services;
+package com.uniovi.incidencecontroller.services;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Operario;
-import com.uniovi.repositories.OperarioRepository;
+import com.uniovi.incidencecontroller.repositories.OperarioRepository;
 
 @Service
 public class OperarioService {

@@ -1,4 +1,4 @@
-package com.uniovi.services;
+package com.uniovi.incidencecontroller.services;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Notificacion;
-import com.uniovi.repositories.NotificacionRepository;
+import com.uniovi.incidencecontroller.repositories.NotificacionRepository;
 
 @Service
 public class NotificacionService {

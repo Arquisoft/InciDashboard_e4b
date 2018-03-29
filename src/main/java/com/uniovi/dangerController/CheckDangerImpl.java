@@ -9,16 +9,31 @@ import org.springframework.stereotype.Service;
 import com.uniovi.entities.FiltroPropiedades;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
-import com.uniovi.services.FilterService;
+import com.uniovi.incidencecontroller.services.FilterService;
 
+/**
+ * Clase que implementa la interfaz DangerAssigner, por lo tanto, clase encargada de comprobar
+ * si la incidencia dada es peligorsa para un operario dado.
+ */
 @Service
 public class CheckDangerImpl implements DangerAssigner{
 
+	/**
+	 * FilterService se usará para recuperar todos los filtros del operario dado.
+	 */
 	@Autowired
 	private FilterService filterService;
 	
+	/**
+	 * Logger para enviar mensajes por la salida estandar.
+	 */
 	private static final Logger logger = Logger.getLogger(CheckDangerImpl.class);
 	
+	/**
+	 * Método encargado de recuperar una lista con todos los filtros del operario 
+	 * y comprobar si la incidencia es peligorsa para alguno de los filtros dados,
+	 * en caso de que sea peligroso habrá que enviar una notificación al operario.
+	 */
 	@Override
 	public void checkDanger(Incidencia incidencia, Operario operario) {
 		List<FiltroPropiedades> filtros = filterService.findByOperario(operario);

@@ -1,4 +1,4 @@
-package com.uniovi.controller;
+package com.uniovi.incidencedisplayer;
 
 import java.util.LinkedList;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.uniovi.Application;
 import com.uniovi.entities.Notificacion;
 import com.uniovi.entities.Operario;
-import com.uniovi.services.NotificacionService;
-import com.uniovi.services.OperarioService;
+import com.uniovi.incidencecontroller.services.NotificacionService;
+import com.uniovi.incidencecontroller.services.OperarioService;
 
 @Controller
 public class NotificacionController {

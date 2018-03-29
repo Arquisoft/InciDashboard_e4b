@@ -1,4 +1,4 @@
-package com.uniovi.services;
+package com.uniovi.incidencecontroller.services;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
 import com.uniovi.entities.extras.Status;
-import com.uniovi.repositories.IncidenceRepository;
+import com.uniovi.incidencecontroller.repositories.IncidenceRepository;
 
 @Service
 public class IncidenceService {

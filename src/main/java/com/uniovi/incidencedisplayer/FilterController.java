@@ -1,4 +1,4 @@
-package com.uniovi.controller;
+package com.uniovi.incidencedisplayer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.uniovi.entities.FiltroPropiedades;
 import com.uniovi.entities.Incidencia;
-import com.uniovi.services.FilterService;
+import com.uniovi.incidencecontroller.services.FilterService;
 
 @Controller
 public class FilterController {
