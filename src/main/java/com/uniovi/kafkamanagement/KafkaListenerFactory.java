@@ -1,4 +1,4 @@
-package com.uniovi.listeners;
+package com.uniovi.kafkamanagement;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

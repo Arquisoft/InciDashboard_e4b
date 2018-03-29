@@ -1,9 +1,12 @@
-package com.uniovi.controller;
+package com.uniovi.incidencedisplayer;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Controlador encargado de gestionar la vista del login.
+ */
 @Controller
 public class LoginController {
 

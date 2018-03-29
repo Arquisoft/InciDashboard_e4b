@@ -1,4 +1,4 @@
-package com.uniovi.services;
+package com.uniovi.incidencecontroller.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +16,6 @@ import com.uniovi.entities.extras.Location;
 
 /**
  * Servicio encargado de insertar unos datos iniciales en la base de datos.
- * @author Alejandro García Parrondo
  */
 @Service
 public class IncludeDataService {
@@ -29,9 +28,6 @@ public class IncludeDataService {
 	
 	@Autowired
 	private IncidenceAssignerImpl asignadorIncidencias;
-	
-	@Autowired 
-	private NotificacionService notificacionService;
 	
 	@PostConstruct
 	public void init() {

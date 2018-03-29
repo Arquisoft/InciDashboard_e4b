@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
-import com.uniovi.services.IncidenceService;
-import com.uniovi.services.NotificacionService;
-import com.uniovi.services.OperarioService;
+import com.uniovi.incidencecontroller.services.IncidenceService;
+import com.uniovi.incidencecontroller.services.OperarioService;
 
 public class NotificationAssignerImpl implements NotificationAssigner{
 
@@ -17,9 +16,6 @@ public class NotificationAssignerImpl implements NotificationAssigner{
 	
 	@Autowired
 	private IncidenceService incidenceService;
-	
-	@Autowired
-	private NotificacionService notificacionService;
 	
 	@Override
 	public void assign(Long id) {

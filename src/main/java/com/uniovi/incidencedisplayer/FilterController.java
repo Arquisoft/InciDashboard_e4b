@@ -1,4 +1,4 @@
-package com.uniovi.controller;
+package com.uniovi.incidencedisplayer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,11 +9,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.uniovi.entities.FiltroPropiedades;
 import com.uniovi.entities.Incidencia;
-import com.uniovi.services.FilterService;
+import com.uniovi.incidencecontroller.services.FilterService;
 
+/**
+ * Controlador encargado de gestionar las direcciones relaciones con los filtros
+ * de operarios.
+ */
 @Controller
 public class FilterController {
 
+	/**
+	 * Servicio de filtros, se usará para gestionar listas de filtros y añadir filtros
+	 * nuevos a la base de datos.
+	 */
 	@Autowired
 	private FilterService filterService;
 	

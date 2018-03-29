@@ -14,41 +14,78 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 import com.uniovi.entities.extras.Location;
 import com.uniovi.entities.extras.Status;
 
-
+/**
+ * <p>La entidad incidencia es una de las entidades más importantes del dashboard ya que es 
+ * en lo que se basa toda la gestión, se reciben incidencias, se asignan incidencias y 
+ * se revisan incidencias.</p>
+ *<p>Una incidencia tiene varios campos, entre ellos los más importantes serán el id de la 
+ *incidencia ya que este es el mismo que se usa en la base de datos y el que se usa para 
+ *ejecutar querys, además de esto tenemos la localización ya que será posible geolocalizar una
+ *incidencia.<br>
+ *También tenemos tags para hacernos una idea de que contenido tiene la incidencia y los fields
+ *de la incidencia, cada campo de la incidencia tiene un valor, estos valores se usan para 
+ *controlar si una incidencia es peligrosa o no, además de esto una incidencia tiene un Operario
+ *que es el operario al que se le ha asignado esta incidencia.</p>
+ */
 @Entity
 public class Incidencia {
-	//Numero de identificacion de la incidencia
+	/**
+	 * Numero de identificacion de la incidencia
+	 */
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	//Nombre de la incidencia
+	/**
+	 * Nombre de la incidencia
+	 */
 	private String incidenceName;	
-	//Descripción de la incidencia
-	private String description;		
-	//Localizacion de la incidencia
+	
+	/**
+	 * Descripción de la incidencia
+	 */
+	private String description;	
+	
+	/**
+	 * Localizacion de la incidencia
+	 */
 	private Location location;
-	//Etiquetas
+	
+	/**
+	 * Etiquetas
+	 */
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> tags;
-	//Campos de la incidencia
+	
+	/**
+	 * Campos de la incidencia
+	 */
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Map<String, String> fields;
 
-	//Estado de la incidencia (ABIERTA,	EN PROCESO,	CERRADA, ANULADA)
+	/**
+	 * Estado de la incidencia (ABIERTA,	EN PROCESO,	CERRADA, ANULADA)
+	 */
 	@Enumerated(EnumType.STRING)
 	private Status status = Status.ABIERTA;
-	//Comentarios sobre la incidencia
+	
+	/**
+	 * Comentarios sobre la incidencia
+	 */
 	private String comments;
-	//Fecha en la que expira la incidencia
+	
+	/**
+	 * Fecha en la que expira la incidencia
+	 */
 	private Date expirationDate;
 
-	//Operario al cual esta asignada la incidencia
+	/**
+	 * Operario al cual esta asignada la incidencia
+	 */
 	@ManyToOne
 	@JoinColumn(name = "operario")
 	private Operario operario;
@@ -83,7 +120,7 @@ public class Incidencia {
 	}
 
 	/**
-	 * Resto de constructores
+	 * Constructor para inicializar la incidencia con otros parámetros.
 	 */
 	public Incidencia(String incidenceName, String descripcion, Location location, List<String> tags) {
 		this.incidenceName = incidenceName;
@@ -93,6 +130,9 @@ public class Incidencia {
 		this.expirationDate = new Date();
 	}
 	
+	/**
+	 * Constructor para inicializar la incidencia con otros parámetros.
+	 */
 	public Incidencia(String incidenceName, String description, Location location) {
 		this.incidenceName = incidenceName;
 		this.description = description;
@@ -261,6 +301,12 @@ public class Incidencia {
 		this.operario = operario;
 	}
 	
+	/**
+	 * Retorna si el estado recibido es el estado actual de la incidencia.
+	 * @param estado -> Estado a comprobar.
+	 * @return Retorna ture en caso de que el estado recibido sea el de la incidencia 
+	 * o false en caso de que no sea así.
+	 */
 	public boolean statusIs(String estado) {
 		if(status.equals(Status.ABIERTA) && "ABIERTA".equals(estado))
 			return true;
