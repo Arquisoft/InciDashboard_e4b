@@ -1,11 +1,11 @@
-package com.uniovi.assignmentController.assigner;
+package com.uniovi.assignmentcontroller.assigner;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.uniovi.dangerController.CheckDangerImpl;
+import com.uniovi.dangercontroller.CheckDangerImpl;
 import com.uniovi.entities.Incidencia;
 import com.uniovi.entities.Operario;
 import com.uniovi.incidencecontroller.services.IncidenceService;

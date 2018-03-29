@@ -1,4 +1,4 @@
-package com.uniovi.assignmentController.assigner;
+package com.uniovi.assignmentcontroller.assigner;
 
 /**
  * Interfaz que se usa para implementar un método que recibirá el id de una incidencia de la

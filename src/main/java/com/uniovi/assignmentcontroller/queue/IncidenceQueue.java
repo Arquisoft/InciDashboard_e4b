@@ -1,4 +1,4 @@
-package com.uniovi.assignmentController.queue;
+package com.uniovi.assignmentcontroller.queue;
 
 /**
  * Interfaz encargada de implementar los métodos necesarios para añadir una incidencia

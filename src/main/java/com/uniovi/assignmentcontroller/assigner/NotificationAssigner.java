@@ -1,4 +1,4 @@
-package com.uniovi.assignmentController.assigner;
+package com.uniovi.assignmentcontroller.assigner;
 
 public interface NotificationAssigner {
 
