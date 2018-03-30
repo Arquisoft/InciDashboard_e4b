@@ -3,6 +3,7 @@ package com.uniovi.entities;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -76,55 +77,41 @@ public class OperarioTest {
 
 	@Test
 	public void incidenceEqualsTest() {
-		Operario operario1 = new Operario();
 		Incidencia test = new Incidencia();
 		test.setId(1L);
-
-		operario1.setIncidencias(new ArrayList<Incidencia>() {
-			private static final long serialVersionUID = 1L;
-			{
-				add(test);
-			}
-		});
+		List<Incidencia> lista = new ArrayList<Incidencia>();
+		lista.add(test);
+		
+		Operario operario1 = new Operario();
+		operario1.setIncidencias(lista);
 
 		Operario operario2 = new Operario();
-		operario2.setIncidencias(new ArrayList<Incidencia>() {
-			private static final long serialVersionUID = 1L;
-			{
-				add(test);
-			}
-		});
-
-		assertEquals(operario1.getIncidencias(), operario2.getIncidencias());
+		operario2.setIncidencias(lista);
+		
+		for(int i=0;i<lista.size();i++)
+			assertEquals(operario1.getIncidencias().get(i), operario2.getIncidencias().get(i));
 	}
 
 	@Test
 	public void incidenceDifferentTest() {
+		Incidencia test = new Incidencia();
+		test.setId(1L);
+		List<Incidencia> lista = new ArrayList<Incidencia>();
+		lista.add(test);
+		
+		Incidencia test2 = new Incidencia();
+		test2.setId(2L);
+		List<Incidencia> lista2 = new ArrayList<Incidencia>();
+		lista2.add(test2);
+		
 		Operario operario1 = new Operario();
-		Incidencia incidencia1 = new Incidencia();
-		incidencia1.setId(1L);
-
-		Incidencia incidencia2 = new Incidencia();
-		incidencia2.setId(2L);
-
-		operario1.setIncidencias(new ArrayList<Incidencia>() {
-			private static final long serialVersionUID = 1L;
-			{
-				add(incidencia1);
-			}
-		});
+		operario1.setIncidencias(lista);
 
 		Operario operario2 = new Operario();
-		operario2.setIncidencias(new ArrayList<Incidencia>() {
-			private static final long serialVersionUID = 1L;
-			{
-				add(incidencia2);
-			}
-		});
-
-		operario1.getIncidencias().stream()
-		.forEach( i1 -> operario2.getIncidencias().stream()
-				.forEach( i2 -> assertNotEquals(i1,i2)) );
+		operario2.setIncidencias(lista2);
+		
+		for(int i=0;i<lista.size();i++)
+			assertNotEquals(operario1.getIncidencias().get(i), operario2.getIncidencias().get(i));
 	}
 
 	@Test
@@ -158,53 +145,35 @@ public class OperarioTest {
 		notificacion.setId(1L);
 
 		Operario operario1 = new Operario();
-		operario1.setNotificaciones(new ArrayList<Notificacion>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add(notificacion);
-			}
-		});
+		operario1.setNotificaciones(new ArrayList<Notificacion>());
+		operario1.getNotificaciones().add(notificacion);
 
 		Operario operario2 = new Operario();
-		operario2.setNotificaciones(new ArrayList<Notificacion>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add(notificacion);
-			}
-		});
+		operario2.setNotificaciones(new ArrayList<Notificacion>());
+		operario2.getNotificaciones().add(notificacion);
 
-		operario1.getNotificaciones().stream()
-		.forEach(n1 -> operario2.getNotificaciones().stream()
-		.forEach(n2 -> assertEquals(n1,n2)));
+		for(int i=0;i<operario1.getNotificaciones().size();i++)
+			assertEquals(operario1.getNotificaciones().get(i), operario2.getNotificaciones().get(i));
 	}
 
 	@Test
 	public void notificationsDifferentTest() {
-		Notificacion notificacion1 = new Notificacion();
-		notificacion1.setId(1L);
+		Notificacion notificacion = new Notificacion();
+		notificacion.setId(1L);
 		
 		Notificacion notificacion2 = new Notificacion();
-		notificacion1.setId(2L);
+		notificacion2.setId(2L);
 
 		Operario operario1 = new Operario();
-		operario1.setNotificaciones(new ArrayList<Notificacion>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add(notificacion1);
-			}
-		});
+		operario1.setNotificaciones(new ArrayList<Notificacion>());
+		operario1.getNotificaciones().add(notificacion);
 
 		Operario operario2 = new Operario();
-		operario2.setNotificaciones(new ArrayList<Notificacion>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add(notificacion2);
-			}
-		});
+		operario2.setNotificaciones(new ArrayList<Notificacion>());
+		operario2.getNotificaciones().add(notificacion2);
 
-		operario1.getNotificaciones().stream()
-		.forEach(n1 -> operario2.getNotificaciones().stream()
-		.forEach(n2 -> assertNotEquals(n1,n2)));
+		for(int i=0;i<operario1.getNotificaciones().size();i++)
+			assertNotEquals(operario1.getNotificaciones().get(i), operario2.getNotificaciones().get(i));
 	}
 	
 }

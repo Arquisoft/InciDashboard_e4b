@@ -70,17 +70,7 @@ public class Notificacion {
 		if (getClass() != obj.getClass())
 			return false;
 		Notificacion other = (Notificacion) obj;
-		if (comentario == null) {
-			if (other.comentario != null)
-				return false;
-		} else if (!comentario.equals(other.comentario))
-			return false;
 		if (id != other.id)
-			return false;
-		if (operario == null) {
-			if (other.operario != null)
-				return false;
-		} else if (!operario.equals(other.operario))
 			return false;
 		return true;
 	}
