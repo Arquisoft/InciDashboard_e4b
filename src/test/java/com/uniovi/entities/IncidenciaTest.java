@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -108,96 +109,68 @@ public class IncidenciaTest {
 	
 	@Test
 	public void tagsEqualsTest() {
+		ArrayList<String> test = new ArrayList<String>();
+		test.add("test");
+		
 		Incidencia incidencia1 = new Incidencia();
-		incidencia1.setTags(new ArrayList<String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add("test");
-			}
-		});
+		incidencia1.setTags(test);
 		
 		Incidencia incidencia2 = new Incidencia();
-		incidencia2.setTags(new ArrayList<String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add("test");
-			}
-		});
+		incidencia2.setTags(test);
 		
-		incidencia1.getTags().stream()
-		.forEach(t1 -> incidencia2.getTags().stream()
-		.forEach(t2 -> assertEquals(t1,t2)));
+		for(int i=0;i<incidencia1.getTags().size();i++)
+			assertEquals(incidencia1.getTags().get(i), incidencia2.getTags().get(i));
 	}
 	
 	@Test
 	public void tagsDifferentTest() {
+		ArrayList<String> test1 = new ArrayList<String>();
+		test1.add("test1");
+		
+		ArrayList<String> test2 = new ArrayList<String>();
+		test2.add("test2");
+		
 		Incidencia incidencia1 = new Incidencia();
-		incidencia1.setTags(new ArrayList<String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add("test1");
-			}
-		});
+		incidencia1.setTags(test1);
 		
 		Incidencia incidencia2 = new Incidencia();
-		incidencia2.setTags(new ArrayList<String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				add("test2");
-			}
-		});
+		incidencia2.setTags(test2);
 		
-		incidencia1.getTags().stream()
-		.forEach(t1 -> incidencia2.getTags().stream()
-		.forEach(t2 -> assertNotEquals(t1,t2)));
+		for(int i=0;i<incidencia1.getTags().size();i++)
+			assertNotEquals(incidencia1.getTags().get(i), incidencia2.getTags().get(i));
 	}
 	
 	@Test
 	public void fieldsEqualsTest() {
+		Map<String,String> test = new HashMap<String,String>();
+		test.put("Temperatura", "30");
+		
 		Incidencia incidencia1 = new Incidencia();
-		incidencia1.setFields(new HashMap<String,String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				put("Temperatura", "30");
-			}
-		});
+		incidencia1.setFields(test);
 		
 		Incidencia incidencia2 = new Incidencia();
-		incidencia2.setFields(new HashMap<String,String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				put("Temperatura", "30");
-			}
-		});
+		incidencia2.setFields(test);
 		
-		incidencia1.getFields().keySet().stream().forEach( 
-		k -> assertEquals( incidencia1.getFields().get(k), incidencia2.getFields().get(k) )
-		);
-		
+		for(String key : test.keySet())
+			assertEquals(incidencia1.getFields().get(key), incidencia2.getFields().get(key));
 	}
 	
 	@Test
 	public void fieldsDifferentTest() {
+		Map<String,String> test1 = new HashMap<String,String>();
+		test1.put("Temperatura", "30");
+		
+		Map<String,String> test2 = new HashMap<String,String>();
+		test2.put("Temperatura", "40");
+		
 		Incidencia incidencia1 = new Incidencia();
-		incidencia1.setFields(new HashMap<String,String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				put("Temperatura", "40");
-			}
-		});
+		incidencia1.setFields(test1);
 		
 		Incidencia incidencia2 = new Incidencia();
-		incidencia2.setFields(new HashMap<String,String>(){
-			private static final long serialVersionUID = 1L;
-			{
-				put("Temperatura", "30");
-			}
-		});
+		incidencia2.setFields(test2);
 		
-		incidencia1.getFields().keySet().stream().forEach( 
-		k -> assertNotEquals( incidencia1.getFields().get(k), incidencia2.getFields().get(k) )
-		);
-		
+		for(String key : test1.keySet())
+			assertNotEquals(incidencia1.getFields().get(key), incidencia2.getFields().get(key));
 	}
 	
 	@Test
