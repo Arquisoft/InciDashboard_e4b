@@ -46,5 +46,45 @@ public class Notificacion {
 	public long getId() {
 		return id;
 	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((comentario == null) ? 0 : comentario.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((operario == null) ? 0 : operario.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Notificacion other = (Notificacion) obj;
+		if (comentario == null) {
+			if (other.comentario != null)
+				return false;
+		} else if (!comentario.equals(other.comentario))
+			return false;
+		if (id != other.id)
+			return false;
+		if (operario == null) {
+			if (other.operario != null)
+				return false;
+		} else if (!operario.equals(other.operario))
+			return false;
+		return true;
+	}
+	
+	
 
 }
