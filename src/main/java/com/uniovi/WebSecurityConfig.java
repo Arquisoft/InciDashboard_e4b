@@ -10,7 +10,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
+
 @Configuration
+@EnablePrometheusEndpoint
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -30,6 +33,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/incidencias/all")
 					.permitAll()
 				.antMatchers("/incidencias/location/**")
+					.permitAll()
+				.antMatchers("/prometheus/**", "/metrics/**")
 					.permitAll()
 				.anyRequest()
 					.authenticated()
